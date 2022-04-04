@@ -7,7 +7,7 @@ import urllib.request
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://michaelzalik:cessna210@localhost/michaelzalik'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://llecqiwurstram:29da2a1c1e6eebabd1f7502b11993b9da68b9b891c8b5ebed5f332526a236ad4@ec2-54-157-79-121.compute-1.amazonaws.com:5432/demlrful9pk9ne'
 db = SQLAlchemy(app)
 CORS(app, support_credentials=True)
 
