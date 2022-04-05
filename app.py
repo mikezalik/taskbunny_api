@@ -1,3 +1,7 @@
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
@@ -7,7 +11,9 @@ import urllib.request
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://llecqiwurstram:29da2a1c1e6eebabd1f7502b11993b9da68b9b891c8b5ebed5f332526a236ad4@ec2-54-157-79-121.compute-1.amazonaws.com:5432/demlrful9pk9ne'
+pg_db = os.getenv("PG_DB")
+
+app.config['SQLALCHEMY_DATABASE_URI'] = pg_db
 db = SQLAlchemy(app)
 CORS(app, support_credentials=True)
 
