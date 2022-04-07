@@ -17,6 +17,9 @@ app = Flask(__name__)
 CORS(app, support_credentials=True)
 
 pg_db = os.getenv("PG_DB")
+# heroku postgres/sql_alchemy compatibility hack
+if pg_db.startswith("postgres://"):
+    pg_db = pg_db.replace("postgres://", "postgresql://", 1)
 secret = os.getenv("SECRET_KEY")
 salt = os.getenv("BCRYPT_SALT")
 
