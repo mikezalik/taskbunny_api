@@ -16,10 +16,10 @@ app = Flask(__name__)
 
 CORS(app, support_credentials=True)
 
-pg_db = os.getenv("PG_DB")
-# heroku postgres/sql_alchemy compatibility hack
-if pg_db.startswith("postgres://"):
-    pg_db = pg_db.replace("postgres://", "postgresql://", 1)
+# pg_db = os.getenv("PG_DB")
+# # heroku postgres/sql_alchemy compatibility hack
+# if pg_db.startswith("postgres://"):
+    # pg_db = pg_db.replace("postgres://", "postgresql://", 1)
 secret = os.getenv("SECRET_KEY")
 salt = os.getenv("BCRYPT_SALT")
 
@@ -27,7 +27,8 @@ app.config["JWT_SECRET_KEY"] = secret
 app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
 jwt = JWTManager(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = pg_db
+# because heroku...
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://llecqiwurstram:29da2a1c1e6eebabd1f7502b11993b9da68b9b891c8b5ebed5f332526a236ad4@ec2-54-157-79-121.compute-1.amazonaws.com:5432/demlrful9pk9ne'
 db = SQLAlchemy(app)
 CORS(app)
 
