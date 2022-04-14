@@ -1,6 +1,10 @@
 # taskbunny_api
 
-## To-Do
+
+## Summary
+Uses token authentication for access to API and task list. When run locally, will need a .env file. 
+
+## Ice Box
 
 - Bcrypt
 - Add Foreign Keys
