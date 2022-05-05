@@ -64,7 +64,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     email = db.Column(db.String(255), unique=True, nullable=False)
     password = db.Column(db.String(255), nullable=False)
-    task_id = db.relationship('Task', cascade='all, delete', backref='user', lazy=True)
+    tasks = db.relationship('Task', cascade='all, delete', backref='user', lazy=True)
 
     def __repr__(self):
         return f"User: {self.User}"
