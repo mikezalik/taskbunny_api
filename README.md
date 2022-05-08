@@ -7,5 +7,6 @@ Uses token authentication for access to API and task list. When run locally, wil
 ## Ice Box
 
 - Bcrypt
+- Implement blueprints for modularity
 - Add Foreign Keys
-- Fix Netlify path so register/login feature works properly. 
+- Fix Netlify path so register/login feature works properly 
