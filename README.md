@@ -1,6 +1,6 @@
 # taskbunny_api
 
-Taskbunny_API is a Flask-based API that serves as the backend for a React productivity application.
+Taskbunny_API is a Flask-based API that serves as the backend for a React productivity application. The primary objective of this API is to provide interfacing with the SQL database, and a means to make protected calls to third-party APIs.
 
 ## Usage 👩‍💻
 
