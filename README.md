@@ -59,7 +59,7 @@ Root URL: https://taskbunnyapi.herokuapp.com/
 
 ## Project Summary
 
-The taskbunny API is a Flask server that provides backend functionality for a React Frontend. The API accesses additional resources outside of taskbunny by calling third-party APIs and by serving JSON for tasks.
+The taskbunny API is a Flask server that provides backend functionality for a React frontend. The API accesses additional resources outside of taskbunny by calling third-party APIs and by serving JSON for tasks.
 
 ## Design Process 📐
 
