@@ -63,11 +63,11 @@ The taskbunny API is a Flask server that provides backend functionality for a Re
 
 ## Design Process 📐
 
-The design phase of this project was straightforward. I started taskbunny by creating a robust microservice with protected endpoints to deliver JSON content and serve as an API for a React Frontend. I thought about future improvements and decided to implement Flask in a way that would promote extensibility in the future.
+I started designing taskbunny by thinking about the user journey. I reasoned that a robust microservice with protected endpoints would work to deliver JSON content and serve as an API for a React Frontend. I thought about future improvements and decided to implement Flask in a way that would promote extensibility.
 
 ## Development Process 🛠
 
-In the development phase of this application, I began with the base server and postgres configurations on my local device. I then created the models for tasks and users. After I tested these, I created routes and used Insomnia as a REST client to test each route. After each route was accessible without authentication, I implemented JWT and incorporated passport local strategies for both registration and login features. I reasoned that each endpoint should remain protected and I use the auth check middleware to verify authentication on each route.
+I began with the base server and postgres configurations on my local device. I then created the models for tasks and users. After I tested these, I created routes and used Insomnia as a REST client to test each route. After each route was accessible without authentication, I implemented JWT and incorporated passport local strategies for both registration and login features. I reasoned that each endpoint should remain protected and I use the auth check middleware to verify authentication on each route.
 
 ## Tech Used 💻
 
