@@ -12,7 +12,7 @@ cd taskbunny_api
 pip3 install -r requirements.txt
 ```
 
-- **Development**: to run the API locally you'll need 1 terminal window/tab and a postgres instance. I use postgres.app to manage local DB instances and recommend you do the same. This app also uses SQLAlchemy to interface with PostgreSQL databases. Utilize this snippet of Python code in app.py to connect the API to your DB.
+- **Development**: to run the API locally you'll need one terminal window/tab and a postgres instance. I use postgres.app to manage local DB instances. This app uses SQLAlchemy to interface with PostgreSQL databases. Utilize this snippet of Python code in app.py to connect the API to your DB.
 
 ```python
 from flask import Flask
@@ -22,7 +22,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/[YOUR_DATABASE_N
 db = SQLAlchemy(app)
 ```
 
-- **Build/Production**: The API may be accessed here: (https://guarded-crag-28336.herokuapp.com/). See the Routes section for specifics on how to access each endpoint. Follow the steps below to deploy your own instance on heroku.
+- **Build/Production**: The API may be accessed here: (https://taskbunnyapi.herokuapp.com/). See the Routes section for specifics on how to access each endpoint. Follow the steps below to deploy your own instance on heroku.
 
 ```bash
 heroku login
@@ -32,11 +32,15 @@ heroku ps:scale web=1
 heroku open
 ```
 
-\*The instructions above assume no procfile has been created.
+\*The instructions above assume no procfile has been created. In order to host on Heroku you'll need to use the following in your Procfile:
+
+```procfile
+web: gunicorn app:app
+```
 
 ## Routes
 
-Root URL: https://guarded-crag-28336.herokuapp.com/
+Root URL: https://taskbunnyapi.herokuapp.com/
 
 \*These endpoints should receive an html form, but will take JSON email and password for both registration and login.
 
@@ -55,7 +59,7 @@ Root URL: https://guarded-crag-28336.herokuapp.com/
 
 ## Project Summary
 
-The taskbunny API is a backend server that .
+The taskbunny API is a Flask server that provides backend functionality for a React Frontend. The API accesses additional resources outside of taskbunny by calling third-party APIs and by serving JSON for tasks.
 
 ## Design Process 📐
 
