@@ -164,7 +164,6 @@ def task_modification(id):
         return {"task": format_task_json(task_find.one())}
 
     elif request.method == "DELETE":
-
         task = Task.query.filter_by(id=id).one()
         db.session.delete(task)
         db.session.commit()
